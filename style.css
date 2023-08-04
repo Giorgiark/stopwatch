@@ -1,16 +1,20 @@
-body {
+body,html {
   height: 100%;
   width: 100%;
   text-align: center;
   background: #2c1338;
   color: #fce5d8;
   font-family: "Kanit", monospace;
-  margin: 0 auto;
+    overflow-x: hidden;
+  overflow-y: hidden;
 }
 
-.container
-{
-  
+#container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
 }
 
 #timer {
@@ -80,3 +84,16 @@ button:hover {
 #settings-modal .settings-btn {
   flex-basis: 48%;
 }
+
+#save-settings {
+  color:black;
+  background:white;
+  border: 1px solid #fff;
+}
+
+#cancel-settings {
+  color:black;
+  background:white;
+  border: 1px solid #fff;
+}
+
