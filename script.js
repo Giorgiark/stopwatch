@@ -23,7 +23,9 @@ var watch = (function() {
         seconds = 0;
       }
     }
-    timer.textContent = (minutes < 10 ? "0" + minutes.toString() : minutes) + ":" + (seconds < 10 ? "0" + seconds.toString() : seconds);
+    var formattedMinutes = minutes < 10 ? "0" + minutes.toString() : minutes;
+    var formattedSeconds = seconds < 10 ? "0" + seconds.toString() : seconds;
+    timer.textContent = formattedMinutes + ":" + formattedSeconds;
   }
 
   function stopTimer() {
@@ -77,6 +79,24 @@ var watch = (function() {
     });
   }
 
+  function savePreferences(bgColor, fontColor) {
+    localStorage.setItem('background-color', bgColor);
+    localStorage.setItem('font-color', fontColor);
+  }
+
+  function loadPreferences() {
+    var savedBgColor = localStorage.getItem('background-color');
+    var savedFontColor = localStorage.getItem('font-color');
+
+    if (savedBgColor && savedFontColor) {
+      document.body.style.backgroundColor = savedBgColor;
+      document.body.style.color = savedFontColor;
+      applyButtonStyles(savedFontColor, savedBgColor);
+      settingsBtn.style.color = savedFontColor;
+      settingsBtn.style.backgroundColor = savedBgColor;
+    }
+  }
+
   settingsBtn.addEventListener("click", showSettingsModal);
   saveSettingsBtn.addEventListener("click", function() {
     var selectedBgColor = document.getElementById("background-color").value;
@@ -85,11 +105,10 @@ var watch = (function() {
     document.body.style.backgroundColor = selectedBgColor;
     document.body.style.color = selectedFontColor;
     applyButtonStyles(selectedFontColor, selectedBgColor);
-
-    // Change font color and background of setting button
     settingsBtn.style.color = selectedFontColor;
     settingsBtn.style.backgroundColor = selectedBgColor;
 
+    savePreferences(selectedBgColor, selectedFontColor);
     hideSettingsModal();
   });
 
@@ -106,6 +125,9 @@ var watch = (function() {
   start.addEventListener("click", startTimer);
   reset.addEventListener("click", resetTimer);
   stop.addEventListener("click", stopTimer);
+
+  // Load preferences when the page loads
+  loadPreferences();
 
   return {
     start: startTimer,
