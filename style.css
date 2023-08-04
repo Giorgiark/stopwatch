@@ -1,8 +1,16 @@
 body {
+  height: 100%;
+  width: 100%;
   text-align: center;
-  background: #2C1338;
-  color: #FCE5D8;
-  font-family: 'Kanit', monospace;
+  background: #2c1338;
+  color: #fce5d8;
+  font-family: "Kanit", monospace;
+  margin: 0 auto;
+}
+
+.container
+{
+  
 }
 
 #timer {
@@ -14,7 +22,7 @@ button {
   padding: 10px 30px;
   background: none;
   border: 1px solid #fff;
-  color: #FCE5D8;
+  color: #fce5d8;
   border-radius: 100px;
   font-size: 16px;
   margin: 0 5px;
@@ -23,8 +31,8 @@ button {
 }
 
 button:hover {
-  color: #2C1338;
-  background: #FCE5D8;
+  color: #2c1338;
+  background: #fce5d8;
 }
 
 #settings-btn {
@@ -35,15 +43,14 @@ button:hover {
   border: 1px solid black;
 }
 
-
 #settings-modal {
-  font-family: 'Kanit', monospace;
+  font-family: "Kanit", monospace;
   display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #000;
+  background-color: #b0bec5;
   color: #fff;
   padding: 20px;
   border-radius: 20px;
@@ -72,5 +79,4 @@ button:hover {
 
 #settings-modal .settings-btn {
   flex-basis: 48%;
-
 }

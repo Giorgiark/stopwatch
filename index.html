@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>CodePen - Stopwatch  Custom 2</title>
+  <title>CodePen - Stopwatch  Custom Widget</title>
   <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -10,21 +10,26 @@
 <!-- partial:index.partial.html -->
 <!DOCTYPE html>
 <html>
+
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div id="timer">00:00</div>
-  <button id="start">Start</button>
-  <button id="reset">Reset</button>
-  <button id="stop">Stop</button>
+  <div id="container">
+    <div id="timer">00:00</div>
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+    <button id="stop">Stop</button>
+  </div>
   <button id="settings-btn">Settings</button>
+
   <div id="settings-modal">
     <h3>Customize Timer</h3>
     <label for="background-color">Background Color:</label>
     <select id="background-color">
-        <option value="#FFFFFF">Notion White</option>
+      <option value="#FFFFFF">Notion White</option>
       <option value="#000000">Notion Black</option>
       <option value="#EBECED">Notion Grey</option>
       <option value="#E9E5E3">Notion Brown</option>
@@ -36,11 +41,10 @@
       <option value="#F6D1ED">Notion Pink</option>
       <option value="#F9DCDA">Notion Red</option>
       <option value="#2C1338">Default</option>
-       
     </select>
     <label for="font-color">Font Color:</label>
     <select id="font-color">
-          <option value="#FFFFFF">Notion White</option>
+      <option value="#FFFFFF">Notion White</option>
       <option value="#000000">Notion Black</option>
       <option value="#9B9A97">Notion Grey</option>
       <option value="#64473A">Notion Brown</option>
@@ -60,6 +64,7 @@
   </div>
   <script src="script.js"></script>
 </body>
+
 </html>
 <!-- partial -->
   <script  src="./script.js"></script>
