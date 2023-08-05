@@ -53,17 +53,17 @@ button:hover {
 }
 
 #settings-modal {
-  font-family: "Kanit", monospace;
+  width:300px;
+  font-family: "Rubik";
   display: none;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #b0bec5;
-  color: #fff;
+  background-color: #F7F6F3;
+  color:  black;
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
   z-index: 9999;
 }
 
@@ -88,6 +88,20 @@ button:hover {
 
 #settings-modal .settings-btn {
   flex-basis: 48%;
+}
+
+.settings-btn {
+   // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: white;
+  border: none;
+  margin: 10px;
+  width: 60%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
 }
 
 #save-settings {
@@ -124,4 +138,19 @@ button:hover {
     padding: 0.125rem 0.25rem;
     margin: 0.125rem;
   }
+}
+
+select {
+  // A reset of styles, including removing the default dropdown arrow
+  appearance: none;
+  // Additional resets for further consistency
+  background-color: transparent;
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 10px;
+  width: 60%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
 }
